@@ -9,6 +9,7 @@ public class CampoMinato implements ActionListener {
     static JTextField jT;
     static JTextField countBand;
     public static int bandierine = 40;
+    public static boolean end = false;
 
     JFrame frame;
 
@@ -117,10 +118,12 @@ public class CampoMinato implements ActionListener {
                     jT.setText("Riga: " + k + "    Colonna: " + j);
                     if (c.isBomba()) {
                         c.setIcon(iconaBomba);
+                        end = true;
                         setBombe();
                     } else {
                         if (vittoria()) {
                             vinto();
+                            end = true;
                         }
                         scopriZonaVuota(k, j);
                     }

@@ -48,13 +48,15 @@ public class Casella extends JButton {
 
             @Override
             public void mousePressed(MouseEvent e){
-                if(SwingUtilities.isRightMouseButton(e) && !cliccata){
+                if(SwingUtilities.isRightMouseButton(e) && !cliccata && !CampoMinato.end){
                     if(isBandierina && CampoMinato.bandierine < 40){
                         isBandierina= false;
+                        cliccata = false;
                         CampoMinato.aumentaBand();
                         setIcon(iconaNormale);
                     }else if(CampoMinato.bandierine > 0){
                         isBandierina = true;
+                        cliccata = true;
                         CampoMinato.dimBand();
                         setIcon(bandierina);
                     }
