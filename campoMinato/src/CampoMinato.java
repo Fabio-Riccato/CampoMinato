@@ -41,17 +41,17 @@ public class CampoMinato implements ActionListener {
 
         // Carica immagini
         iconaChiara = scalaIcona("campoMinato/src/Immagini/campoC.jpeg", larghezzaCasella, altezzaCasella);
-        iconaScura = scalaIcona("campoMinato/src/immagini/campo.png", larghezzaCasella, altezzaCasella);
-        iconaHover = scalaIcona("campoMinato/src/immagini/campoC+.jpeg", larghezzaCasella, altezzaCasella);
-        iconaClick = scalaIcona("campoMinato/src/immagini/cliccato.png", larghezzaCasella, altezzaCasella);
-        iconaClickChiara = scalaIcona("campoMinato/src/immagini/cliccatoC.PNG", larghezzaCasella, altezzaCasella);
-        iconaBomba = scalaIcona("campoMinato/src/immagini/corvo.jpeg", larghezzaCasella, altezzaCasella);
+        iconaScura = scalaIcona("campoMinato/src/Immagini/campo.png", larghezzaCasella, altezzaCasella);
+        iconaHover = scalaIcona("campoMinato/src/Immagini/campoC+.jpeg", larghezzaCasella, altezzaCasella);
+        iconaClick = scalaIcona("campoMinato/src/Immagini/cliccato.png", larghezzaCasella, altezzaCasella);
+        iconaClickChiara = scalaIcona("campoMinato/src/Immagini/cliccatoC.PNG", larghezzaCasella, altezzaCasella);
+        iconaBomba = scalaIcona("campoMinato/src/Immagini/corvo.jpeg", larghezzaCasella, altezzaCasella);
 
         for (int k = 0; k < righe; k++) {
             for (int j = 0; j < colonne; j++) {
                 boolean casellaChiara = (k + j) % 2 == 0;
                 ImageIcon iconaCasellaNormale = casellaChiara ? iconaChiara : iconaScura;
-                Casella casella = new Casella(false, 0, iconaCasellaNormale, iconaHover, scalaIcona("campoMinato/src/immagini/Bandiera.jpeg", larghezzaCasella, altezzaCasella));
+                Casella casella = new Casella(false, 0, iconaCasellaNormale, iconaHover, scalaIcona("campoMinato/src/Immagini/Bandiera.jpeg", larghezzaCasella, altezzaCasella));
                 casella.setChiara(casellaChiara);
                 casella.addActionListener(this);
                 p.add(casella);
@@ -134,7 +134,7 @@ public class CampoMinato implements ActionListener {
     }
 
     public void vinto(){
-        ImageIcon icon = scalaIcona("campoMinato/src/immagini/gg.png", 600, 300);
+        ImageIcon icon = scalaIcona("campoMinato/src/Immagini/gg.png", 600, 300);
         JLabel labelImmagine = new JLabel(icon);
         labelImmagine.setBounds((frame.getWidth() - 600) / 2, (frame.getHeight() - 300) / 2, 600, 300);
         JLabel labelTesto = new JLabel("Hai vinto!!!", SwingConstants.CENTER);
@@ -177,7 +177,7 @@ public class CampoMinato implements ActionListener {
             }
         } else {
             int numero = c.getVicino();
-            String path = "campoMinato/src/immagini/cliccato" + numero + ".PNG";
+            String path = "campoMinato/src/Immagini/cliccato" + numero + ".PNG";
             c.setIcon(scalaIcona(path, (1200 - 150) / colonne, (1200 - 150) / righe));
         }
     }
